@@ -3,8 +3,10 @@ import {
   BeforeUpdate,
   Column,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
+import { ImagenProducto } from './imagenProducto.entity';
 
 @Entity()
 export class Producto {
@@ -20,6 +22,13 @@ export class Producto {
     unique: true,
   })
   slug: string;
+
+  @OneToMany(
+    () => ImagenProducto,
+    (imagenProducto) => imagenProducto.producto,
+    { cascade: true, eager: true }, //eager carga relaciones en la request
+  )
+  imagenesProducto: ImagenProducto[];
 
   @BeforeInsert()
   crearSlug() {

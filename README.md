@@ -21,6 +21,12 @@ Incluye:
 
 - Set global prefix 'api'
 
+- BD Con ejemplo de Relaciones OneToMany entre Producto-ImagenProducto
+
+- Seed para poblar BD
+
+<br>
+
 # Instrucciones:
 
 1. Clonar proyecto
@@ -37,7 +43,14 @@ Incluye:
 docker-compose up -d
 ```
 
-6. Ejecutar el proyecto en modo de desarrollo:
+6. Ejecutar SEED para cargar productos de prueba en BD
+
+```
+GET
+localhost:3000/api/seed
+```
+
+7. Ejecutar el proyecto en modo de desarrollo:
 
 ```
 yarn start:dev

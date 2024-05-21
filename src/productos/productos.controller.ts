@@ -25,7 +25,6 @@ export class ProductosController {
 
   @Get()
   findAll(@Query() paginationDTO: PaginationDto) {
-    console.log(paginationDTO);
     return this.productosService.findAll(paginationDTO);
   }
 
